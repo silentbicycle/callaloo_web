@@ -356,7 +356,7 @@ static void choose_http_response(info_t *info, req_info_t *req) {
         if (0 == strncmp(req->uri, "/", req->uri_length)) {
             req->status = 200;
             req->resp_length = snprintf(req->resp_buf, MAX_RESPONSE_LENGTH,
-                "dowstairs %s\r\n"
+                "downstairs %s\r\n"
                 "upstairs %s\r\n",
                 door_status_str(info->downstairs),
                 door_status_str(info->upstairs));
@@ -365,7 +365,7 @@ static void choose_http_response(info_t *info, req_info_t *req) {
             req->content_type = "text/json";
             req->resp_length = snprintf(req->resp_buf, MAX_RESPONSE_LENGTH,
                 "{\r\n"
-                "    \"dowstairs\": \"%s\",\r\n"
+                "    \"downstairs\": \"%s\",\r\n"
                 "    \"upstairs\": \"%s\"\r\n"
                 "}\r\n",
                 door_status_str(info->downstairs),

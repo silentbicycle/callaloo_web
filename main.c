@@ -396,6 +396,7 @@ static void send_http_response(int fd, req_info_t *req) {
         "HTTP/1.1 %u %s\r\n"
         "Content-Length: %d\r\n"
         "Content-Type: %s\r\n"
+        "Connection: close\r\n"
         "\r\n", req->status, status_label(req->status),
         req->resp_length, req->content_type);
     if (MAX_RESPONSE_HEADER_LENGTH < header_length) {
